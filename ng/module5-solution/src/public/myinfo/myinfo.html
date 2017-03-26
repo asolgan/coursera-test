@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">
+    My Info
+  </h2>
+
+  <div class="text-center" ng-if="!myInfoCtrl.user">
+    Not Signed Up Yet. <a ui-sref="public.signUp">Sign up Now!</a>
+  </div>
+
+  <div class ng-if="myInfoCtrl.user">
+    First name: {{ myInfoCtrl.user.firstname }}
+    <br>
+    Last name: {{ myInfoCtrl.user.lastname }}
+    <br>
+    Email: {{ myInfoCtrl.user.email }}
+    <br>
+    Phone: {{ myInfoCtrl.user.phone }}
+    <br>
+    Favorite Dish: {{ myInfoCtrl.user.favorite }}
+  </div>
+
+  <menu-item ng-if="myInfoCtrl.user" menu-item="myInfoCtrl.favoriteItem"></menu-item>
+
+</div>
